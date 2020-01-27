@@ -1,0 +1,42 @@
+﻿@model KategorijaAddEditVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+<div class="box box-primary" style="width:400px;">
+    <div class="box-header with-border">
+        @if (Model.kategorija.Id == 0)
+        {
+            <h3 class="box-title">Nova kategorija</h3>
+        }
+        else
+        {
+            <h3 class="box-title">Editovanje podataka o kategoriji</h3>
+
+        }
+        <br />
+    </div>
+
+    <form asp-action="Snimi" class="myForm">
+        <input type="hidden" asp-for="kategorija.Id" />
+      <br />
+
+      <div class="form-group">
+          <label for="name">Naziv</label>
+          <input type="text" asp-for="kategorija.Name" placeholder="Naziv">
+      </div>
+
+      <div class="form-group">
+          @if (Model.kategorija.Id != 0)
+          {
+              <label>Aktivna: </label>
+              @Html.CheckBoxFor(Model => Model.kategorija.IsActive)
+          }
+      </div>
+
+        <div class="box-footer">
+            <input type="submit" class="myBtn" value="Snimi">
+        </div>
+    </form>
+  </div>

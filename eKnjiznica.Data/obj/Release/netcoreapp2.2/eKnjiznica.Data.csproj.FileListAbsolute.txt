@@ -1,0 +1,14 @@
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\eKnjiznica.Data.deps.json
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\eKnjiznica.Data.dll
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\eKnjiznica.Data.pdb
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\bin\Release\netcoreapp2.2\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.csprojAssemblyReference.cache
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.csproj.CoreCompileInputs.cache
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.AssemblyInfoInputs.cache
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.AssemblyInfo.cs
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.csproj.CopyComplete
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.dll
+C:\Users\enida\Desktop\eKnjizica-master\eKnjiznica.Data\obj\Release\netcoreapp2.2\eKnjiznica.Data.pdb

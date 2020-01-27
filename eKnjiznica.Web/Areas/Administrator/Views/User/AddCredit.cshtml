@@ -1,0 +1,38 @@
+﻿@model CreditVM
+@{
+    ViewData["Title"] = "AddCredit";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+<div class="box box-primary" style="width:400px;">
+    <div class="box-header with-border">
+        <h3 class="box-title">Dodavanje kredita</h3>
+        <br />
+    </div>
+
+    <form asp-action="AddCredit" method="post" asp-controller="User" role="form">
+        <input type="hidden" asp-for="UserId"/>
+        <div class="box-body">
+            <div class="form-group">
+                <label for="user">User</label><br />
+                <input type="text" asp-for="User" readonly class="form-control" >
+            </div>
+            <div class="form-group">
+
+                <label for="Opis">Opis</label><br />
+                <input type="text" asp-for="Description" class="form-control" >
+
+            </div>
+            <div class="form-group">
+                <label for="iznos">Uplata</label><br />
+                <input type="text" asp-for="Uplata" class="form-control" placeholder="Email">
+            </div>
+          
+            
+        </div>
+        <div class="box-footer">
+            <input type="submit" class="btn btn-primary" value="Dodaj">
+        </div>
+    </form>
+
+</div>

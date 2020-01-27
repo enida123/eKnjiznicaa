@@ -1,0 +1,68 @@
+﻿@model KupovineDetailsVM
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+<form method="get"  asp-controller="Kupovine" asp-action="Details" asp-route-Id="@Model.Id" class="form-inline my-3 my-lg-0 mr-lg-2">
+    
+    <input  type="hidden" asp-for="Id"/>
+    <div class="form-group">
+        <label>Naslov: </label>
+        <input type="text" asp-for="naslov" class="form-control" />
+    </div>
+    <space></space>
+    <div class="form-group">
+
+        <label>Autor: </label>
+
+        <input type="text" asp-for="autor" class="form-control" />
+    </div>
+
+   
+
+
+    <button type="submit">Pretrazi</button>
+</form>
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Knjige</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Naslov</th>
+                    <th>Autor</th>
+                    <th>Kategorija</th>
+                    <th>Kupac</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model.orderItems)
+                {
+
+                    <tr>
+                        <td>@x.Books.Title </td>
+                        <td>@x.Books.AuthorName</td>
+                        <td>@x.Books.Categories.Name</td>
+                        <td>@x.Orders.ApplicationUser.FullName</td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>
+

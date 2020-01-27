@@ -1,0 +1,57 @@
+﻿@model MyProfileVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Client/Views/_Layout.cshtml";
+}
+<div class="box box-primary" style="width:500px;">
+
+    <div class="box" >
+        <div class="box-header">
+            <h3 class="box-title">Moj profil</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+
+            <strong>
+                <i class="fa fa-user margin-r-5"></i>
+                <span class="label label-danger">Ime i prezime</span>
+
+            </strong>
+
+            <input type="text" asp-for="ImePrezime" readonly>
+            <br />
+
+
+            <strong>
+                <i class="fa fa-envelope margin-r-5"></i>
+                <span class="label label-danger">Email</span>
+
+            </strong>
+            <input type="text" asp-for="Email" readonly>
+            <br />
+
+            <strong>
+                <i class="fa fa-calendar margin-r-5"></i>
+                <span class="label label-danger">Datum rođenja</span>
+
+            </strong>
+            <input type="text" asp-for="DatumRodjenja" readonly>
+            <br />
+            <strong>
+                <i class="fa fa-money margin-r-5"></i>
+                <span class="label label-danger">Trenutno stanje računa</span>
+
+            </strong>
+            <input type="text" asp-for="TrenutnoStanje" readonly>
+            <br />
+
+            <br />
+            <a asp-action="ChangePassword" asp-area="Client" asp-controller="Profil" class="btn btn-primary">Promijeni password</a>
+
+        </div>
+        <br />
+
+        
+    </div>
+    </div>

@@ -1,0 +1,61 @@
+﻿@model OrderIndexVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+
+
+<form method="get" asp-route="/Administrator/Kupovine/Index" class="form-inline my-3 my-lg-0 mr-lg-2">
+
+    <div class="form-group">
+        <label>Korisnik: </label>
+
+        <input type="text" asp-for="korisnik" class="form-control" />
+    </div>
+
+
+    <button type="submit">Pretrazi</button>
+</form>
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Završene kupovine</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Datum kupovine</th>
+                    <th>Kupac</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model.order)
+                {
+
+                <tr>
+                    <td>@x.OrderDate.ToShortDateString()</td>
+                    <td>@x.ApplicationUser.FullName</td>
+                    <td style="float:inherit">
+                        <a asp-action="Details" asp-controller="Kupovine" asp-route-Id="@x.Id" class="btn btn-primary"><i class="fa fa-info"></i> Detalji</a>
+                    </td>
+                </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>
+

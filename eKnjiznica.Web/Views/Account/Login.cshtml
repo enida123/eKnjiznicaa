@@ -1,0 +1,48 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<p class="login-box-msg">Prijavite se</p>
+<form role="form" id="frmLogin" method="post" asp-controller="Account" asp-action="Login">
+    <div class="form-group has-feedback">
+        <input type="text" asp-for="Username" class="form-control" placeholder="Username..." />
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+    </div>
+    <div class="form-group has-feedback">
+        <input type="password" asp-for="Password" placeholder="Password..." class="form-control" />
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+    <br />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row">
+
+        <!-- /.col -->
+        <div class="col-xs-4 pull-right">
+            <a href="#" id="submitLink" class="btn btn-primary    btn-flat btn-block">Login</a>
+
+        </div>
+
+        <!-- /.col -->
+    </div>
+</form>
+<br />
+
+        <a href="/Account/Register" style="margin-left:100px;" class="link">Create Account</a>
+  
+@section Scripts {
+    <script>
+        document.getElementById("submitLink").onclick = function () {
+            document.getElementById("frmLogin").submit();
+        };
+        document.getElementById('frmLogin').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                console.log("true");
+                document.getElementById("frmLogin").submit();
+            }
+        });
+    </script>
+}

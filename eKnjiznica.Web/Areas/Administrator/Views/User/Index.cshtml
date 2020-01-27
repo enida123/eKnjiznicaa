@@ -1,0 +1,53 @@
+﻿@model List<ApplicationUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Klijenti</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Email</th>
+                    <th>Datum rođenja</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+
+                    <tr>
+                        <td>@x.FirstName </td>
+                        <td>@x.LastName</td>
+                        <td>@x.Email</td>
+                        <td>@x.UserName</td>
+                        <td style="float:inherit">
+                            <a asp-action="Details" asp-controller="User" asp-route-id="@x.Id" class="btn btn-info"><i class="fa fa-info"></i> Detalji</a>
+                            <a asp-action="Books" asp-controller="User" asp-route-id="@x.Id" class="btn btn-info"><i class="fa fa-book"></i> Kupljene knjige</a>
+                            <a href="/Administrator/Administratori/Disable/@x.Id" class="btn btn-danger"><i class="fa fa-remove"></i> Deaktiviraj</a>
+
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>

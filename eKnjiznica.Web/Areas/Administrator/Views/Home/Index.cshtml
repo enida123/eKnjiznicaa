@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+<ol class="breadcrumb">
+    <li>
+        <a href="/Administrator" class="breadcrumb-item" style="color:cadetblue;font-size:x-large;text-decoration:none">Modul administratora</a>
+    </li>
+</ol>
+
+<div class="panel" style="width:1100px;">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6" >
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Administartori</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <a asp-controller="Administratori" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6" style="margin-left:40px;">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Kategorije</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-list"></i>
+                    </div>
+                    <a asp-controller="Kategorije" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6" style="margin-left:40px;">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Knjige</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <a asp-controller="Knjige" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Klijenti</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <a asp-controller="User" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            
+           
+
+
+            <div class="col-lg-3 col-xs-6" style="margin-left:40px;">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Kupovine</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <a asp-controller="Kupovine" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-xs-6" style="margin-left:40px;">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Transakcije</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <a asp-controller="Transactions" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>
+<hr />

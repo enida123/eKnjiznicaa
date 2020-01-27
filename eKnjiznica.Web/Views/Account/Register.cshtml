@@ -1,0 +1,94 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+<p class="login-box-msg">Registruj se</p>
+<form role="form" id="frmRegister" method="post" asp-controller="Account" asp-action="Register">
+    @Html.AntiForgeryToken()
+    <div class="card-body">
+        <div class="form-group has-feedback">
+
+            <input type="text" asp-for="FirstName" placeholder="FirstName..." class="form-control" />
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+
+        </div>
+        <div class="form-group has-feedback">
+
+            <input type="text" asp-for="LastName" placeholder="LastName..." class="form-control" />
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+        </div>
+        <div class="form-group has-feedback">
+
+            <input type="text" asp-for="Email" placeholder="Email..." class="form-control" />
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+        </div>
+
+        <div class="form-group has-feedback">
+
+            <input type="tel" asp-for="PhoneNumber" placeholder="Phone number..." class="form-control" />
+            <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+        </div>
+        <div class="form-group has-feedback">
+            <label>
+                Datum rodjenja
+            </label>
+            @if (String.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <input type="date" asp-for="BirthDate" value="@DateTime.Now" placeholder="Datum rodjenja..." class="form-control" />
+            }
+            else
+            {
+                <input type="date" asp-for="BirthDate"  placeholder="Datum rodjenja..." class="form-control" />
+
+            }
+            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+
+        </div>
+        <div class="form-group has-feedback">
+
+            <input type="text" asp-for="Username" placeholder="Username..." class="form-control" />
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            <span asp-validation-for="Username" class="text-danger"></span>
+
+        </div>
+
+
+
+
+        <div class="form-group has-feedback">
+
+            <input type="password" asp-for="Password" placeholder="Password..." class="form-control" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <br />
+            @if (!String.IsNullOrEmpty(Model.ErrorMessage))
+            {
+                <p>@Model.ErrorMessage</p>
+            }
+
+        </div>
+        <div class="form-group has-feedback">
+
+            <input type="password" asp-for="ConfirmPassword" placeholder="Confirm password..." class="form-control" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Register" />
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,70 @@
+﻿@model KnjigeListVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Client/Views/_Layout.cshtml";
+}
+
+
+
+
+<form method="get" asp-route="/Client/Knjige/Index" class="form-inline my-3 my-lg-0 mr-lg-2">
+    
+    <div class="form-group">
+        <label>Kategorija: </label>
+
+        <input type="text" asp-for="kategorija" class="form-control" />
+    </div>
+
+
+    <button type="submit">Pretrazi</button>
+</form>
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Knjige</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Autor</th>
+                    <th>Datum objavljivanja</th>
+                    <th>Cijena</th>
+                    <th>Kategorija</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model.books)
+                {
+
+                    <tr>
+                        <td>@x.Title</td>
+                        <td>@x.AuthorName</td>
+                        <td>@x.DatePublished.ToShortDateString()</td>
+                        <td>@x.Price</td>
+                        <td>@x.Categories.Name</td>
+
+
+                        <td style="float:inherit">
+                            <a href="/Client/Knjige/Details/@x.Id" class="btn btn-primary"><i class="fa fa-edit"></i>Detalji</a>
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>

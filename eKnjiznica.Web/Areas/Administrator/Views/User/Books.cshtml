@@ -1,0 +1,49 @@
+﻿@model PurchasedBooks
+@{
+    ViewData["Title"] = "Books";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+    <div class="box" style="width:1090px;">
+        <div class="box-header">
+            <h3 class="box-title">Kupljene knjige</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Naslov</th>
+                        <th>Autor</th>
+                        <th>Kategorija</th>
+                        <th>Datum kupovine</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model.items)
+                    {
+
+                        <tr>
+                            <td>@x.Books.Title </td>
+                            <td>@x.Books.AuthorName</td>
+                            <td>@x.Books.Categories.Name</td>
+                            <td>@x.Orders.OrderDate.ToShortDateString()</td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <br />
+
+        <!-- /.box-body -->
+        <br />
+        <br />
+    </div>
+
+

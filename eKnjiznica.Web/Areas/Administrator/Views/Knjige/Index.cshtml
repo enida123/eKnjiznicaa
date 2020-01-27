@@ -1,0 +1,91 @@
+﻿@model KnjigaListVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+
+
+
+<form method="get" asp-route="/Administrator/Knjige/Index" class="form-inline my-3 my-lg-0 mr-lg-2">
+    <div class="form-group">
+        <label>Naslov: </label>
+        <input type="text" asp-for="naslov" class="form-control" />
+    </div>
+<space></space>
+    <div class="form-group">
+
+        <label>Autor: </label>
+
+        <input type="text" asp-for="autor" class="form-control" />
+    </div>
+    
+    <div class="form-group">
+        <label>Kategorija: </label>
+
+        <input type="text" asp-for="kategorija" class="form-control" />
+    </div>
+
+
+    <button type="submit">Pretrazi</button>
+</form>
+<br />
+<br />
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Knjige</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Naslov</th>
+                    <th>Autor</th>
+                    <th>Datum objavljivanja</th>
+                    <th>Kategorija</th>
+                    <th>Cijena</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model.knjige)
+                {
+
+                    <tr>
+                        <td>@x.Title</td>
+                        <td>@x.AuthorName</td>
+                        <td>@x.DatePublished.ToShortDateString()</td>
+                        <td>@x.Categories.Name</td>
+                        <td>@x.Price</td>
+                        @if (x.IsActive)
+                        {
+                            <td>Aktivna</td>
+                        }
+                        else
+                        {
+                            <td>Deaktivirana</td>
+                        }
+
+                        <td style="float:inherit">
+                            <a href="/Administrator/Knjige/Edit/@x.Id" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                            <a href="/Administrator/Knjige/Disable/@x.Id" class="btn btn-danger">Deaktiviraj</a>
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+    <a style="margin-left:15px;" href="/Administrator/Knjige/Dodaj" class=" btn btn-primary"><i class="fa fa-plus"></i> Dodaj</a>
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>

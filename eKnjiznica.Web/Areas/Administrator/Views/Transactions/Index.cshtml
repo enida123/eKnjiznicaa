@@ -1,0 +1,83 @@
+﻿@model TransactionsListVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+
+
+<form method="get" asp-route="/Administrator/Transactions/Index" class="form-inline my-3 my-lg-0 mr-lg-2">
+    <div class="form-group">
+        <label>Administartor: </label>
+        <input type="text" asp-for="administrator" class="form-control" />
+    </div>
+    <space></space>
+    <div class="form-group">
+
+        <label>Korisnik: </label>
+
+        <input type="text" asp-for="korisnik" class="form-control" />
+    </div>
+
+  
+
+
+    <button type="submit">Pretrazi</button>
+</form>
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Transakcije</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Datum transakcije</th>
+                    <th>Tip transakcije</th>
+                    <th>Korisnik</th>
+                    <th>Administrator</th>
+                    <th>Predhodno stanje</th>
+                    <th>Novo stanje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model.transactions)
+                {
+
+                    <tr>
+                        <td>@x.DateCreated.ToShortDateString() </td>
+                        <td>@x.TransactionTypes.Name</td>
+                        @if (x.TransactionTypes.Name == "Uplata")
+                        {
+                            <td>@x.UserCredit.ApplicationUser.FullName</td>
+                            <td>@x.Admin.FullName</td>
+
+
+                        }
+                        else
+                        {
+                            <td>@x.ApplicationUser.FullName</td>
+                            <td></td>
+                        }
+                        <td>@x.PreviousCredit</td>
+                        <td>@x.CurrentCredit</td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>
+
+

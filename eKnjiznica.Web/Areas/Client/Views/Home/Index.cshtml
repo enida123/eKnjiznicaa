@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Client/Views/_Layout.cshtml";
+}
+
+
+<div class="panel" style="width:1100px; ">
+    <div class="panel-body">
+        <img src="~/dist/img/Stories-Banner.jpg" height="300px" width="100%" />
+
+        <div class="row">
+
+            <br />
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Moj profil</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <a asp-controller="Profil" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Knjige</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <a asp-controller="Knjige" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Narudzbe</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-shopping-bag"></i>
+                    </div>
+                    <a asp-controller="Narudzbe" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6">
+                <!-- small box -->
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+
+                        <h4 style="margin-top:40px;">Kupovine</h4>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                    <a asp-controller="Kupovine" asp-action="Index" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+
+
+
+
+
+        </div>
+    </div>
+
+</div>
+<hr />

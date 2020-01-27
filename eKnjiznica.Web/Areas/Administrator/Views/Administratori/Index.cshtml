@@ -1,0 +1,56 @@
+﻿@model List<ApplicationUser>
+@{
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+<div class="box" style="width:1090px;">
+    <div class="box-header">
+        <h3 class="box-title">Administratori</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+
+                    <tr>
+                        <td>@x.FirstName </td>
+                        <td>@x.LastName</td>
+                        <td>@x.Email</td>
+                        <td>@x.UserName</td>
+                        <td style="float:inherit">
+                            <a href="/Administrator/Administratori/ChangePassword/@x.Id" class="btn btn-primary"><i class="fa fa-edit"></i>Reset password </a>
+
+                            <a href="/Administrator/Administratori/Disable/@x.Id" class="btn btn-danger"><i class="fa fa-remove"></i>Deaktiviraj</a>
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <br />
+    <a style="margin-left:15px;" href="/Administrator/Administratori/Dodaj" class=" btn btn-primary"><i class="fa fa-plus"></i> Dodaj</a>
+
+    <!-- /.box-body -->
+    <br />
+    <br />
+</div>
+
+

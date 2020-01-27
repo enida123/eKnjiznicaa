@@ -1,0 +1,55 @@
+﻿@model AdminAddEditVM
+@{
+    ViewData["Title"] = "Dodaj";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+<div class="box box-primary" style="width:400px;">
+    <div class="box-header with-border">
+        <h3 class="box-title">Novi administrator</h3>
+        <br />
+    </div>
+
+    <form asp-action="Snimi" role="form">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="name">Ime</label><br />
+                <input type="text" asp-for="FirstName" class="form-control" placeholder="Ime">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+
+                <label for="prezime">Prezime</label><br />
+                <input type="text" asp-for="LastName" class="form-control" placeholder="Prezime">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label><br />
+                <input type="text" asp-for="Email" class="form-control" placeholder="Email">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label><br />
+                <input type="text" asp-for="Username" class="form-control" placeholder="Username">
+
+                <span asp-validation-for="Username" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label><br />
+                <input type="password" asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                @if(!String.IsNullOrEmpty(Model.ErrorMessage))
+                { 
+                    <p class="text-danger">@Model.ErrorMessage</p>
+                }
+            </div>
+        </div>
+        <div class="box-footer">
+            <input type="submit" class="btn btn-primary" value="Snimi">
+            </div>
+    </form>
+
+</div>

@@ -1,0 +1,23 @@
+﻿@model KnjigeDetaljiVM
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Client/Views/_Layout.cshtml";
+}
+
+<h2 style="font-style:italic">Detalji knjige „@Model.naziv“</h2>
+<br />
+<div style="width:90%">
+    <label for="name">Kategorija</label>
+    <input type="text" asp-for="kategorija" disabled placeholder="Naslov">
+    <br />
+
+    <label for="description">Opis</label><br />
+<textarea disabled id="editor1" style="width:100%" name="editor1" rows="10" cols="80" asp-for="opis"></textarea>
+
+    <br />
+
+    <a href="/Client/Knjige/Order/@Model.id" class="btn btn btn-primary">Add to cart</a>
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Knjige" asp-area="Client" style="float:right">Nazad</a>
+
+</div>
+

@@ -1,0 +1,55 @@
+﻿@model UserDetailsVM
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Administrator/Views/_Layout.cshtml";
+}
+
+
+<div class="box box-primary" style="width:500px;">
+
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Detalji</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+
+
+            <strong>
+                <i class="fa fa-user margin-r-5"></i>
+                <span class="label label-danger">Username</span>
+
+            </strong>
+
+            <input type="text" asp-for="Username" readonly>
+            <br />
+
+
+            <strong>
+                <i class="fa fa-phone margin-r-5"></i>
+                <span class="label label-danger">Broj telefona</span>
+
+            </strong>
+            <input type="text" asp-for="PhoneNumber" readonly>
+            <br />
+
+            <strong>
+                <i class="fa fa-money margin-r-5"></i>
+                <span class="label label-danger">Trenutno stanje racuna</span>
+
+            </strong>
+            <input type="text" asp-for="TrenutnoStanjeKredita" readonly>
+            <br />
+
+
+
+            <a asp-action="AddCredit" asp-area="Administrator" asp-route-id="@Model.Id" asp-controller="User" class="btn btn-primary">Dodaj kredit</a>
+
+        </div>
+        <br />
+
+        <!-- /.box-body -->
+        <br />
+        <br />
+    </div>
+</div>
